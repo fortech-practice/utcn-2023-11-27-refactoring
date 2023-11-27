@@ -24,10 +24,6 @@ public class Main {
     }
 
     private static boolean isBetween(int givenValue, int lowerLimit, int upperLimit) {
-        if (lowerLimit <= givenValue && givenValue < upperLimit) {
-            return true;
-        } else {
-            return false;
-        }
+        return (lowerLimit <= givenValue) && (givenValue < upperLimit);
     }
 }
