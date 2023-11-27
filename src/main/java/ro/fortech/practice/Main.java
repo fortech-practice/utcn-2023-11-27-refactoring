@@ -2,6 +2,11 @@ package ro.fortech.practice;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        String greetingMessage = generateGreetingMessage("Yosemite Sam");
+        System.out.println(greetingMessage);
+    }
+
+    private static String generateGreetingMessage(String personName) {
+        return "Hello, " + personName + "!";
     }
 }
