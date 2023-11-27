@@ -1,11 +1,12 @@
 package ro.fortech.practice;
 
-import java.util.Calendar;
+import java.time.Clock;
 
 public class GreetingMessageGenerator {
+    private InternalClock clock = new InternalClock();
 
     public String generateGreetingMessage(String personName) {
-        int hourOfDay = getHourOfDay();
+        int hourOfDay = clock.getHourOfDay();
         String momentOfDay = "night";
         if (isBetween(hourOfDay, 6, 12)) {
             momentOfDay = "morning";
@@ -21,9 +22,5 @@ public class GreetingMessageGenerator {
 
     private boolean isBetween(int givenValue, int lowerLimit, int upperLimit) {
         return (lowerLimit <= givenValue) && (givenValue < upperLimit);
-    }
-
-    private int getHourOfDay() {
-        return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
 }
