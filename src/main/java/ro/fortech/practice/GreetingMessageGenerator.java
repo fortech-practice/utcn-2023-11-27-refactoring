@@ -1,7 +1,11 @@
 package ro.fortech.practice;
 
 public class GreetingMessageGenerator {
-    private Clock clock = new InternalClock();
+    private final Clock clock;
+
+    public GreetingMessageGenerator(Clock clock) {
+        this.clock = clock;
+    }
 
     public String generateGreetingMessage(String personName) {
         int hourOfDay = clock.getHourOfDay();
