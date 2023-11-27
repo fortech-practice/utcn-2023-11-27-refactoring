@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class GreetingMessageGenerator {
 
     public String generateGreetingMessage(String personName) {
-        int hourOfDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int hourOfDay = getHourOfDay();
         String momentOfDay = "night";
         if (isBetween(hourOfDay, 6, 12)) {
             momentOfDay = "morning";
@@ -21,5 +21,9 @@ public class GreetingMessageGenerator {
 
     private boolean isBetween(int givenValue, int lowerLimit, int upperLimit) {
         return (lowerLimit <= givenValue) && (givenValue < upperLimit);
+    }
+
+    private int getHourOfDay() {
+        return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
 }
